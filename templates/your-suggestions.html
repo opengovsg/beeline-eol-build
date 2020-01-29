@@ -1,0 +1,26 @@
+<ion-view class="your-suggestions" view-title="Your Suggestions" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <menu-hamburger></menu-hamburger>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <div class="item item-divider">All Suggestions</div>
+
+    <!-- repeat 5 times -->
+    <ion-item ng-repeat="a in [1,2,3,4,5]" ng-if="!data.suggestions">
+      <animated-route></animated-route>
+    </ion-item>
+
+    <ion-item ng-repeat="suggestion in data.suggestions" class="item-text-wrap">
+      <suggestion-item suggestion="suggestion" ng-click="viewSuggestionDetail(suggestion)">
+      </suggestion-item>
+    </ion-item>
+
+    <div class="create-suggestion-btn">
+      <button class="primary-button" ui-sref="tabs.create-new-suggestion">
+        Create new suggestion
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

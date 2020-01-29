@@ -1,0 +1,54 @@
+<ion-view id="pg_bookdate" view-title="Select Dates">
+
+  <ion-content>
+    <multiple-date-picker ng-model="disp.selectedDatesMoments"
+                          days-allowed="disp.daysAllowed"
+                          month="disp.month"
+                          sunday-first-day="true"
+                          highlight-days="disp.highlightDays"
+                          disallow-back-past-months="true"
+                          disable-days-before="disp.today"
+                          month-changed="logMonthChanged">
+    </multiple-date-picker>
+
+    <div class="datepicker">
+      <table class="legend-table">
+        <tr>
+          <td class="picker-day picker-off sold-out exemplar">
+            #
+          </td>
+          <td class="label">Sold out</td>
+          <td class="picker-day picker-off previously-booked exemplar">
+            #
+          </td>
+          <td class="label">Your Previous Bookings</td>
+        </tr>
+        <tr>
+        </tr>
+      </table>
+    </div>
+
+    <div class="item booking-dates-selected">
+
+      <div class="labelDiv">
+        <label>
+          <ion-checkbox ng-model="book.pickWholeMonth">
+            Select whole month
+          </ion-checkbox>
+        </label>
+      </div>
+
+      <div><b>{{book.selectedDates.length}} day(s)</b> selected</div>
+
+      <button class="button primary-button button-item" ng-disabled="book.selectedDates.length == 0" ui-sref="tabs.route-summary({
+                routeId: book.routeId,
+                boardStop: book.boardStopId,
+                alightStop: book.alightStopId,
+                selectedDates: book.selectedDates.join(','),
+                promoCode: book.promoCode,
+              })">
+        Review Booking
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

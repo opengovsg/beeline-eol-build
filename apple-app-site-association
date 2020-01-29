@@ -1,0 +1,15 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "4CYF853X55.sg.beeline.beeline",
+                "paths": [ "*" ]
+            },
+            {
+                "appID": "C9YMA892DM.com.grabtaxi.shuttle",
+                "paths": [ "*" ]
+            }
+        ]
+    }
+}
